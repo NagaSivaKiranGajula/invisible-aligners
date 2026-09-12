@@ -1,0 +1,42 @@
+# Invisible Aligners — Apache config for the static export
+# Used by GoDaddy shared/cPanel hosting. Copy this file as .htaccess into
+# the web root (it is already placed there by install-godaddy.sh).
+
+DirectoryIndex index.html
+
+# Correct MIME types for the film and the PWA manifest
+AddType video/mp4 .mp4
+AddType application/manifest+json .webmanifest
+
+# Compress text output
+AddOutputFilterByType DEFLATE text/html text/css application/javascript application/json image/svg+xml
+
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+
+  # Prerendered routes -> their own index.html
+  RewriteRule ^product/?$ product/index.html [L]
+  RewriteRule ^experience-centers/?$ experience-centers/index.html [L]
+  RewriteRule ^experience-centers/chennai-express-avenue/?$ experience-centers/chennai-express-avenue/index.html [L]
+  RewriteRule ^find-a-provider/?$ find-a-provider/index.html [L]
+  RewriteRule ^dentists/?$ dentists/index.html [L]
+  RewriteRule ^about/?$ about/index.html [L]
+  RewriteRule ^contact/?$ contact/index.html [L]
+
+  # Everything else not backed by a real file falls back to the app shell
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteRule ^ index.html [L]
+</IfModule>
+
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresByType image/png "access plus 30 days"
+  ExpiresByType video/mp4 "access plus 30 days"
+  ExpiresByType text/css "access plus 7 days"
+  ExpiresByType application/javascript "access plus 7 days"
+</IfModule>
+
+<IfModule mod_headers.c>
+  Header set X-Content-Type-Options "nosniff"
+</IfModule>

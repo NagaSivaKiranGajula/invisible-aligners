@@ -1,0 +1,489 @@
+/* Cascade layer order: reset lowest, then Tailwind/Quanta base, then
+ * components and finally utilities — so Quanta's q-* utilities (e.g.
+ * q-button-*) always win over global element resets. */
+@layer reset, theme, base, components, utilities;
+
+@import "tailwindcss" source(none);
+@source "../src";
+@source "../packages/app-landing/src";
+
+/* New in-app Quanta-style components (moved out of the quanta package). Their
+ * CSS uses Tailwind v4 @utility/@source, so it must load through this tailwind
+ * entry. Ordering mirrors quanta's components.css (composer after button;
+ * media-card + generation-card after media). */
+
+@import "tw-animate-css";
+/* shadcn v4 base (scrollbar/scroll-fade utilities, toast base) for src/components/ui */
+@import "shadcn/tailwind.css";
+
+@custom-variant dark (&:where([data-theme="default-dark"], [data-theme="default-dark"] *));
+
+/* ------------------------------------------------------------------ */
+/* Invisible Aligners — brand token layer (design brief)    */
+/* ------------------------------------------------------------------ */
+@theme {
+  --spacing: 0.25rem;
+
+  /* Deep lagoon palette — one accent: sea-glass mint */
+  --color-lagoon-950: #000000;
+  --color-lagoon-900: #0a0a0a;
+  --color-lagoon-800: #161616;
+  --color-lagoon-700: #222222;
+  --color-line-ink: #2e2e2e;
+  --color-bone: #f7f7f5;
+  --color-fog: #9d9d9d;
+  --color-mint: #ffffff;
+  --color-mint-bright: #e6e6e6;
+
+  --font-sans: "Satoshi", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, "SFMono-Regular", monospace;
+}
+
+@layer base {
+  html {
+    background-color: var(--color-lagoon-950);
+    color: var(--color-bone);
+    color-scheme: dark;
+    scrollbar-color: var(--color-lagoon-700) var(--color-lagoon-950);
+  }
+
+  body {
+    min-height: 100vh;
+    background-color: var(--color-lagoon-950);
+    color: var(--color-bone);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  * {
+    border-color: var(--color-line-ink);
+  }
+
+  ::selection {
+    background: var(--color-mint);
+    color: var(--color-lagoon-950);
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-mint);
+    outline-offset: 3px;
+  }
+}
+
+/* ------------------------------------------------------------------ */
+/* Shared craft layer                                                  */
+/* ------------------------------------------------------------------ */
+@layer components {
+  .shell {
+    width: min(100% - 3rem, 74rem);
+    margin-inline: auto;
+  }
+
+  .eyebrow {
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--color-mint);
+  }
+
+  .display-1 {
+    font-size: clamp(2.6rem, 6vw, 4.6rem);
+    line-height: 0.98;
+    letter-spacing: -0.03em;
+    font-weight: 700;
+    color: var(--color-bone);
+  }
+
+  .display-2 {
+    font-size: clamp(2rem, 4vw, 3.2rem);
+    line-height: 1.02;
+    letter-spacing: -0.025em;
+    font-weight: 700;
+    color: var(--color-bone);
+  }
+
+  .prose-site {
+    font-size: 1.05rem;
+    line-height: 1.7;
+    color: var(--color-fog);
+    max-width: 60ch;
+  }
+
+  .hairline {
+    border-color: var(--color-line-ink);
+  }
+
+  .mono-label {
+    font-family: var(--font-mono);
+    font-size: 0.78rem;
+    letter-spacing: 0.08em;
+    color: var(--color-fog);
+  }
+
+  /* Diagonal scan-line accent used sparingly */
+  .scan-accent {
+    position: relative;
+  }
+  .scan-accent::after {
+    content: "";
+    position: absolute;
+    inset: auto 0 -0.7em 0;
+    height: 1px;
+    background: linear-gradient(90deg, var(--color-mint), transparent 70%);
+  }
+
+  /* ---- Marquee ---- */
+  .marquee {
+    overflow: hidden;
+    white-space: nowrap;
+  }
+  .marquee__track {
+    display: flex;
+    width: max-content;
+    animation: marquee-scroll 30s linear infinite;
+    will-change: transform;
+  }
+  .marquee__group {
+    display: inline-flex;
+    gap: 2.5rem;
+    padding-right: 2.5rem;
+  }
+  @keyframes marquee-scroll {
+    to {
+      transform: translateX(-50%);
+    }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .marquee__track {
+      animation: none;
+    }
+  }
+
+  /* Small / medium body text (token-backed, no arbitrary utilities in routes) */
+  .body-sm {
+    font-size: 0.95rem;
+    line-height: 1.65;
+  }
+  .body-md {
+    font-size: 1.05rem;
+    line-height: 1.7;
+  }
+
+  /* Native checkbox/select tint for brand forms */
+  .check-mint {
+    accent-color: var(--color-mint);
+  }
+
+  /* ---- Bespoke CTA garments (one per intent; see design brief) ---- */
+
+  /* 1. Hero: oversized text link, smile-arc underline draws in */
+  .cta-smile {
+    position: relative;
+    display: inline-block;
+    font-family: var(--font-sans);
+    font-size: clamp(1.05rem, 2vw, 1.35rem);
+    font-weight: 700;
+    color: var(--color-bone);
+    padding-bottom: 0.45rem;
+  }
+  .cta-smile svg {
+    display: inline-block;
+    margin-left: 0.5rem;
+    transform: translateY(0.15em);
+  }
+  .cta-smile .smile-arc {
+    stroke: var(--color-mint);
+    stroke-width: 2.5;
+    fill: none;
+    stroke-linecap: round;
+    stroke-dasharray: 180;
+    stroke-dashoffset: 180;
+    transition: stroke-dashoffset 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+  .cta-smile:hover .smile-arc,
+  .cta-smile:focus-visible .smile-arc {
+    stroke-dashoffset: 0;
+  }
+  .cta-smile:hover {
+    color: var(--color-mint-bright);
+  }
+
+  /* 2. Material chip: flips like a material sample swatch */
+  .cta-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.65rem;
+    padding: 0.8rem 1.35rem;
+    border: 1px solid var(--color-mint);
+    border-radius: 999px;
+    color: var(--color-mint);
+    font-family: var(--font-mono);
+    font-size: 0.85rem;
+    letter-spacing: 0.04em;
+    background: transparent;
+    transition:
+      background-color 0.35s,
+      color 0.35s,
+      transform 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+  .cta-chip .chip-dot {
+    width: 0.55rem;
+    height: 0.55rem;
+    border-radius: 999px;
+    background: var(--color-mint);
+    box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.5);
+    transition: box-shadow 0.35s;
+  }
+  .cta-chip:hover {
+    background: var(--color-mint);
+    color: var(--color-lagoon-950);
+    transform: rotate(-2deg) scale(1.03);
+  }
+  .cta-chip:hover .chip-dot {
+    background: var(--color-lagoon-950);
+    box-shadow: 0 0 0 6px rgba(255, 255, 255, 0.25);
+  }
+
+  /* 3. Mono readout: decodes the label on hover */
+  .cta-mono {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    font-family: var(--font-mono);
+    font-size: 0.85rem;
+    letter-spacing: 0.06em;
+    color: var(--color-bone);
+    padding: 0.3rem 0;
+  }
+  .cta-mono .cursor-block {
+    display: inline-block;
+    width: 0.55em;
+    height: 1em;
+    background: var(--color-mint);
+    animation: cursor-blink 1.1s steps(2) infinite;
+  }
+  @keyframes cursor-blink {
+    50% {
+      opacity: 0;
+    }
+  }
+  .cta-mono:hover .readout-text {
+    animation: decode-text 0.45s steps(8);
+    color: var(--color-mint-bright);
+  }
+  @keyframes decode-text {
+    0% {
+      opacity: 0.15;
+      letter-spacing: 0.28em;
+    }
+    100% {
+      opacity: 1;
+      letter-spacing: 0.06em;
+    }
+  }
+
+  /* 4. Treatment rows: the whole band shears on hover */
+  .treat-row {
+    display: grid;
+    grid-template-columns: 3.5rem 1fr auto;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 1.6rem 1.2rem;
+    border-top: 1px solid var(--color-line-ink);
+    transition:
+      background-color 0.35s,
+      transform 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+      padding-left 0.35s;
+  }
+  .treat-row:last-child {
+    border-bottom: 1px solid var(--color-line-ink);
+  }
+  .treat-row:hover {
+    background: linear-gradient(
+      100deg,
+      color-mix(in srgb, var(--color-mint) 14%, transparent),
+      transparent 55%
+    );
+    padding-left: 2rem;
+  }
+  .treat-row:hover .treat-arrow {
+    transform: translateX(0.4rem);
+    color: var(--color-mint-bright);
+  }
+  .treat-arrow {
+    transition:
+      transform 0.35s,
+      color 0.35s;
+  }
+
+  /* 5. Corner-bracket viewfinder target */
+  .cta-bracket {
+    position: relative;
+    display: inline-block;
+    padding: 0.95rem 0.45rem;
+    font-family: var(--font-mono);
+    font-size: 0.9rem;
+    letter-spacing: 0.06em;
+    color: var(--color-bone);
+  }
+  .cta-bracket::before,
+  .cta-bracket::after {
+    content: "";
+    position: absolute;
+    width: 0.85rem;
+    height: 0.85rem;
+    transition: transform 0.35s;
+  }
+  .cta-bracket::before {
+    top: -0.35rem;
+    left: -0.55rem;
+    border-top: 2px solid var(--color-mint);
+    border-left: 2px solid var(--color-mint);
+  }
+  .cta-bracket::after {
+    bottom: -0.35rem;
+    right: -0.55rem;
+    border-bottom: 2px solid var(--color-mint);
+    border-right: 2px solid var(--color-mint);
+  }
+  .cta-bracket:hover::before {
+    transform: translate(-0.25rem, -0.25rem);
+  }
+  .cta-bracket:hover::after {
+    transform: translate(0.25rem, 0.25rem);
+  }
+  .cta-bracket:hover {
+    color: var(--color-mint-bright);
+  }
+
+  /* 6. Ticket: perforation tear on hover */
+  .cta-ticket {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.9rem;
+    padding: 1.05rem 2.1rem 1.05rem 1.6rem;
+    color: var(--color-lagoon-950);
+    background: var(--color-mint);
+    font-weight: 700;
+    letter-spacing: 0.01em;
+    clip-path: polygon(
+      1.1rem 0,
+      100% 0,
+      100% calc(100% - 1.1rem),
+      calc(100% - 1.1rem) 100%,
+      0 100%,
+      0 1.1rem
+    );
+    transition:
+      filter 0.3s,
+      transform 0.3s;
+  }
+  .cta-ticket .ticket-notch {
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    letter-spacing: 0.14em;
+    opacity: 0.75;
+  }
+  .cta-ticket:hover {
+    filter: brightness(1.08);
+    transform: scale(1.015) rotate(-0.5deg);
+  }
+
+  /* 7. Footer framed block: fills with clipped text swap */
+  .cta-block {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 15rem;
+    padding: 1.1rem 1.6rem;
+    border: 1px solid var(--color-mint);
+    color: var(--color-bone);
+    font-family: var(--font-mono);
+    font-size: 0.9rem;
+    letter-spacing: 0.08em;
+    overflow: hidden;
+    transition: border-color 0.35s, color 0.35s;
+  }
+  .cta-block .block-fill {
+    position: absolute;
+    inset: 0;
+    background: var(--color-mint);
+    transform: translateY(101%);
+    transition: transform 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+  .cta-block .block-label {
+    position: relative;
+    z-index: 1;
+  }
+  .cta-block:hover {
+    border-color: var(--color-mint);
+    color: var(--color-lagoon-950);
+  }
+  .cta-block:hover .block-fill {
+    transform: translateY(0);
+  }
+
+  /* Nav hairline links */
+  .nav-link {
+    position: relative;
+    color: var(--color-fog);
+    font-size: 0.95rem;
+    transition: color 0.25s;
+  }
+  .nav-link::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -0.35rem;
+    height: 1px;
+    width: 100%;
+    background: var(--color-mint);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+  .nav-link:hover,
+  .nav-link[data-active="true"] {
+    color: var(--color-bone);
+  }
+  .nav-link:hover::after,
+  .nav-link[data-active="true"]::after {
+    transform: scaleX(1);
+  }
+}
+
+/* Hide the engine's built-in chapter route (we compose our own nav) */
+.scroll-scrub__route {
+  display: none;
+}
+
+/* Headline emphasis: italic same-family word */
+.italic-word {
+  font-style: italic;
+  font-weight: 400;
+  color: var(--color-mint);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cta-smile .smile-arc {
+    stroke-dashoffset: 0;
+  }
+  .cta-mono .cursor-block {
+    animation: none;
+  }
+  .cta-mono:hover .readout-text {
+    animation: none;
+  }
+}
+
+/* Monochrome photography to match the black and white identity: every
+ * generated photo and the scrub film render in grayscale. */
+main img,
+main video {
+  filter: grayscale(1) contrast(1.06);
+}
