@@ -483,7 +483,6 @@
 
 /* Monochrome photography to match the black and white identity: every
  * generated photo and the scrub film render in grayscale. */
-main img,
-main video {
+main img {
   filter: grayscale(1) contrast(1.06);
 }
