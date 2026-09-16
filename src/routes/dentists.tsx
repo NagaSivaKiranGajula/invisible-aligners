@@ -25,6 +25,7 @@ import {
   WE_BRING,
   YOU_BRING,
 } from "@/lib/dentists-data";
+import { assetUrl } from "@/lib/asset-url";
 import { CLINICAL_CHECKS, PARTNER_FAQ, PARTNER_KIT, PARTNER_STEPS, SITE } from "@/lib/site-data";
 
 export const Route = createFileRoute("/dentists")({
@@ -473,7 +474,7 @@ function DentistsPage() {
           </div>
           <div data-parallax="0.1" className="relative">
             <img
-              src="/assets/people/dentist-woman.png"
+              src={assetUrl("/assets/people/dentist-woman.jpg")}
               alt="A dentist partner in sage-green scrubs"
               className="aspect-[4/3] w-full rounded-2xl border hairline object-cover"
               loading="eager"

@@ -15,6 +15,7 @@ import {
   Waves,
 } from "lucide-react";
 
+import { assetUrl } from "@/lib/asset-url";
 import { AMENITIES, DIRECTIONS, SITE, TREATMENTS, VISIT_FLOW } from "@/lib/site-data";
 
 export const Route = createFileRoute(
@@ -59,7 +60,7 @@ function Gallery() {
         <div data-rise className="mt-12 grid gap-4 lg:grid-cols-2">
           <figure className="overflow-hidden rounded-2xl border hairline">
             <img
-              src="/assets/clinic-reception.png"
+              src={assetUrl("/assets/clinic-reception.jpg")}
               alt="The studio reception with curved mint seating"
               className="h-full min-h-[18rem] w-full object-cover"
               loading="lazy"
@@ -72,7 +73,7 @@ function Gallery() {
           <div className="grid gap-4">
             <figure className="overflow-hidden rounded-2xl border hairline">
               <img
-                src="/assets/product/tray-macro.png"
+                src={assetUrl("/assets/product/tray-macro.jpg")}
                 alt="A clear aligner tray on the planning desk"
                 className="h-56 w-full object-cover"
                 loading="lazy"
@@ -84,7 +85,7 @@ function Gallery() {
             </figure>
             <figure className="overflow-hidden rounded-2xl border hairline">
               <img
-                src="/assets/people/smile-portrait.png"
+                src={assetUrl("/assets/people/smile-portrait.jpg")}
                 alt="A patient after her scan"
                 className="h-56 w-full object-cover object-top"
                 loading="lazy"
@@ -175,7 +176,7 @@ function ChennaiPage() {
       <section className="relative overflow-hidden bg-lagoon-950 pt-32">
         <div className="absolute inset-0">
           <img
-            src="/assets/clinic-reception.png"
+            src={assetUrl("/assets/clinic-reception.jpg")}
             alt=""
             className="h-full w-full object-cover"
             loading="eager"

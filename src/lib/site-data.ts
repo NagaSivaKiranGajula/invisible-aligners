@@ -1,3 +1,5 @@
+import { assetUrl } from "@/lib/asset-url";
+
 /** Brand data for Invisible Aligners. Content mirrors the business's own
  * website (owner-supplied content document), with product specs and team
  * copied faithfully. */
@@ -65,14 +67,14 @@ export const TESTIMONIALS = [
       "My aligners are completely invisible. Two months in and no one at work has any idea I am straightening my teeth.",
     name: "Priya R.",
     role: "Google review, Chennai",
-    face: "/assets/people/testimonial-woman.png",
+    face: assetUrl("/assets/people/testimonial-woman.jpg"),
   },
   {
     quote:
       "The team planned the whole journey on my first visit. Painless scans, clear timelines, and they checked in on every single tray.",
     name: "Karthik S.",
     role: "Google review, Royapettah",
-    face: "/assets/people/testimonial-man.png",
+    face: assetUrl("/assets/people/testimonial-man.jpg"),
   },
   {
     quote:

@@ -21,6 +21,7 @@ import {
   SAMPLE_PINS,
   SITE,
 } from "@/lib/site-data";
+import { assetUrl } from "@/lib/asset-url";
 
 export const Route = createFileRoute("/find-a-provider")({
   head: () => ({
@@ -157,7 +158,7 @@ function ProviderLocator() {
                 <div className="grid md:grid-cols-[1fr_1.2fr]">
                   <div className="relative min-h-[12rem]">
                     <img
-                      src="/assets/clinic-reception.png"
+                      src={assetUrl("/assets/clinic-reception.jpg")}
                       alt=""
                       className="absolute inset-0 h-full w-full object-cover"
                       loading="lazy"

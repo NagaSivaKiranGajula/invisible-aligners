@@ -11,18 +11,23 @@ bun install >/dev/null 2>&1 || true   # relink node_modules/.bin between environ
 
 PORT="${PORT:-3011}"
 OUT="${OUT:-dist-static}"
+CURL="${CURL:-curl}"
+if command -v curl.exe >/dev/null 2>&1; then
+  CURL="${CURL_EXE:-curl.exe}"
+fi
 
 rm -rf dist/client  # force a fresh bundle per variant build
 echo ">> building client bundle..."
 bun run build >/dev/null
 
-echo ">> starting dev server on port ${PORT}..."
-bun run dev -- --port "$PORT" --host 127.0.0.1 >/tmp/static-export-vite.log 2>&1 &
+echo ">> starting production preview server on port ${PORT}..."
+bun run preview -- --port "$PORT" --host 127.0.0.1 >/tmp/static-export-vite.log 2>&1 &
 PID=$!
 trap 'kill "$PID" 2>/dev/null || true' EXIT
 
 for _ in $(seq 1 60); do
-  if curl -sf "http://127.0.0.1:${PORT}/" >/dev/null 2>&1; then
+  if "$CURL" -sf "http://127.0.0.1:${PORT}/" -o /tmp/static-export-home.html \
+    && [ -s /tmp/static-export-home.html ]; then
     break
   fi
   sleep 1
@@ -36,19 +41,45 @@ for route in $ROUTES; do
   if [ "$route" = "/robots.txt" ] || [ "$route" = "/sitemap.xml" ]; then
     file="$OUT${route}"
     mkdir -p "$(dirname "$file")"
-    curl -sf "http://127.0.0.1:${PORT}${route}" > "$file" \
-      || echo "WARN: failed to fetch ${route}"
+    tmp="$(mktemp)"
+    if "$CURL" -sf "http://127.0.0.1:${PORT}${route}" > "$tmp" && [ -s "$tmp" ]; then
+      mv "$tmp" "$file"
+    else
+      rm -f "$tmp"
+      echo "WARN: failed to fetch ${route}"
+    fi
     continue
   fi
   file="$OUT${route%/}/index.html"
   mkdir -p "$(dirname "$file")"
-  curl -sf "http://127.0.0.1:${PORT}${route}" > "$file" \
-    || echo "WARN: failed to fetch ${route}"
+  tmp="$(mktemp)"
+  if "$CURL" -sf "http://127.0.0.1:${PORT}${route}" > "$tmp" && [ -s "$tmp" ]; then
+    mv "$tmp" "$file"
+  else
+    rm -f "$tmp"
+    echo "WARN: failed to fetch ${route}"
+  fi
 done
 
 echo ">> copying built assets and public files..."
 [ -d dist/client ] && cp -r dist/client/. "$OUT"/
 [ -d public ] && cp -r public/. "$OUT"/
+
+echo ">> removing superseded large PNG assets..."
+rm -f \
+  "$OUT/assets/clinic-reception.png" \
+  "$OUT/assets/product/tray-leaf.png" \
+  "$OUT/assets/product/lifestyle-hands.png" \
+  "$OUT/assets/product/tray-macro.png" \
+  "$OUT/assets/people/smile-portrait.png" \
+  "$OUT/assets/people/testimonial-man.png" \
+  "$OUT/assets/people/testimonial-woman.png" \
+  "$OUT/assets/people/dentist-woman.png" \
+  "$OUT/assets/world/scene-01-poster.png" \
+  "$OUT/assets/world/scene-01-mobile-poster.png"
+
+echo ">> rewriting HTML asset links for static hosting..."
+node scripts/relativize-static-html.mjs "$OUT"
 
 echo ">> static export ready in ${OUT}"
 du -sh "$OUT"

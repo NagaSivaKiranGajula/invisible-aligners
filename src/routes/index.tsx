@@ -2,6 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight, Check, MapPin, Quote } from "lucide-react";
 
 import { ScrollScrub } from "@/components/scroll-scrub/scroll-scrub";
+import { assetUrl } from "@/lib/asset-url";
 import { scrollScrubScenes, scrollScrubTheme } from "@/scroll-scrub-scenes";
 import {
   COMPARISON,
@@ -84,7 +85,7 @@ function MaterialSection() {
       <div className="shell grid items-center gap-14 lg:grid-cols-2">
         <div data-parallax="0.12" className="relative">
           <img
-            src="/assets/product/tray-macro.png"
+            src={assetUrl("/assets/product/tray-macro.jpg")}
             alt="Macro shot of a clear aligner tray refracting sea-glass light"
             className="aspect-[4/3] w-full rounded-2xl border hairline object-cover"
             loading="lazy"
@@ -223,7 +224,7 @@ function ProductBento() {
         <div className="mt-14 grid gap-4 lg:grid-cols-2">
           <div data-rise className="overflow-hidden rounded-2xl border hairline">
             <img
-              src="/assets/product/tray-leaf.png"
+              src={assetUrl("/assets/product/tray-leaf.jpg")}
               alt="Clear aligner resting beside a green leaf on dark slate"
               className="h-full min-h-[20rem] w-full object-cover transition-transform duration-700 hover:scale-105"
               loading="lazy"
@@ -232,7 +233,7 @@ function ProductBento() {
           </div>
           <div data-rise className="overflow-hidden rounded-2xl border hairline">
             <img
-              src="/assets/people/smile-portrait.png"
+              src={assetUrl("/assets/people/smile-portrait.jpg")}
               alt="Portrait of a patient with a confident smile"
               className="h-full min-h-[20rem] w-full object-cover object-top transition-transform duration-700 hover:scale-105"
               loading="lazy"
@@ -241,7 +242,7 @@ function ProductBento() {
           </div>
           <div data-rise className="overflow-hidden rounded-2xl border hairline">
             <img
-              src="/assets/product/lifestyle-hands.png"
+              src={assetUrl("/assets/product/lifestyle-hands.jpg")}
               alt="Hands holding the mint-green aligner travel case"
               className="h-full min-h-[18rem] w-full object-cover transition-transform duration-700 hover:scale-105"
               loading="lazy"
@@ -308,7 +309,7 @@ function CenterFeature() {
     <section className="relative overflow-hidden bg-lagoon-950">
       <div className="absolute inset-0">
         <img
-          src="/assets/clinic-reception.png"
+          src={assetUrl("/assets/clinic-reception.jpg")}
           alt=""
           data-parallax="0.2"
           className="h-[130%] w-full object-cover"

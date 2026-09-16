@@ -1,6 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight, Clock, MapPin, Phone, Star } from "lucide-react";
 
+import { assetUrl } from "@/lib/asset-url";
 import { SITE, VISIT_FLOW } from "@/lib/site-data";
 
 export const Route = createFileRoute("/experience-centers")({
@@ -110,7 +111,7 @@ function CentersPage() {
           <div data-rise className="grid overflow-hidden rounded-2xl border hairline bg-lagoon-900 lg:grid-cols-2">
             <div className="relative min-h-[18rem]">
               <img
-                src="/assets/clinic-reception.png"
+                src={assetUrl("/assets/clinic-reception.jpg")}
                 alt="Reception of the Invisible Aligners experience center"
                 className="absolute inset-0 h-full w-full object-cover"
                 loading="lazy"

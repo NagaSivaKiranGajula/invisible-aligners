@@ -1,6 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { Check, Clock, Minus, Package, ShieldCheck, Sparkles, UtensilsCrossed } from "lucide-react";
 
+import { assetUrl } from "@/lib/asset-url";
 import {
   ALIGNER_LIFE,
   CANDIDACY,
@@ -289,7 +290,7 @@ function ProductPage() {
           </div>
           <div data-parallax="0.1" className="relative">
             <img
-              src="/assets/product/tray-leaf.png"
+              src={assetUrl("/assets/product/tray-leaf.jpg")}
               alt="Clear aligner resting beside a green leaf on dark slate"
               className="aspect-[4/3] w-full rounded-2xl border hairline object-cover"
               loading="eager"
@@ -328,7 +329,7 @@ function ProductPage() {
           </ol>
           <div data-rise className="mt-14">
             <img
-              src="/assets/product/tray-macro.png"
+              src={assetUrl("/assets/product/tray-macro.jpg")}
               alt="Macro shot of a clear aligner tray refracting light"
               className="max-h-[24rem] w-full rounded-2xl border hairline object-cover"
               loading="lazy"
