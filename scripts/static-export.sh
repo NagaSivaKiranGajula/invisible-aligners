@@ -16,6 +16,15 @@ if command -v curl.exe >/dev/null 2>&1; then
   CURL="${CURL_EXE:-curl.exe}"
 fi
 
+if command -v bun >/dev/null 2>&1; then
+  JS_RUNTIME="bun"
+elif command -v node >/dev/null 2>&1; then
+  JS_RUNTIME="node"
+else
+  echo "ERROR: neither Bun nor Node is available in PATH. Install Bun or Node and restart your shell." >&2
+  exit 1
+fi
+
 rm -rf dist/client  # force a fresh bundle per variant build
 echo ">> building client bundle..."
 bun run build >/dev/null
@@ -79,7 +88,11 @@ rm -f \
   "$OUT/assets/world/scene-01-mobile-poster.png"
 
 echo ">> rewriting HTML asset links for static hosting..."
-node scripts/relativize-static-html.mjs "$OUT"
+if [ "$JS_RUNTIME" = "bun" ]; then
+  bun scripts/relativize-static-html.mjs "$OUT"
+else
+  node scripts/relativize-static-html.mjs "$OUT"
+fi
 
 echo ">> static export ready in ${OUT}"
 du -sh "$OUT"

@@ -21,6 +21,7 @@ Requires Bun (https://bun.sh) or Node 20+.
 bun install
 bun run dev        # local dev at http://localhost:3000
 bun run build      # production build (dist/client)
+bash scripts/static-export.sh    # local run
 ```
 
 ## Option A — private VPS / any web server (recommended)

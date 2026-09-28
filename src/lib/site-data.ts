@@ -25,6 +25,22 @@ export const SITE = {
   payments: "Credit, debit, Google Pay and NFC",
 };
 
+export const SUSTAINABILITY = {
+  headline: "India's next smile export is built for a greener world.",
+  intro:
+    "We are introducing a first-of-its-kind aligner recycling programme from India, combining patented technology, green energy and a lower-plastic approach for a global market.",
+  trayCount: "10,000+",
+  trayLabel: "EcoTrays delivered",
+  creditCount: "10,000",
+  creditLabel: "Carbon credits secured",
+  recycleTitle: "The first aligner recycling programme of its kind",
+  recycleLine:
+    "Return finished trays through our recycling loop instead of sending them to landfill. Our goal is less plastic, very low microplastics and zero microplastics intended to enter the body.",
+  patentTitle: "Patented, lower-plastic technology",
+  patentLine:
+    "A material and recovery system designed to reduce plastic use while supporting green energy and measurable carbon-credit action.",
+} as const;
+
 export const NAV = [
   { to: "/product", label: "The aligners" },
   { to: "/experience-centers", label: "Experience centers" },
@@ -96,7 +112,7 @@ export const MATERIAL_FACTS = [
   { label: "BPA-FREE POLYMER", line: "Medical-grade, hypoallergenic material, safe for long-term wear." },
   { label: "BIO-DEGRADABLE", line: "Eco-certified to break down in commercial composting (ASTM D6400)." },
   { label: "MATTE FINISH", line: "Glare-free and stain-resistant, crystal clear through every tray." },
-  { label: "ZERO-WASTE KIT", line: "Recyclable packaging, plus a free carry case and cleaning crystals." },
+  { label: "RECYCLING PROGRAMME", line: "Return finished trays through our recovery loop, with less plastic and very low microplastics." },
 ] as const;
 
 export const AMENITIES = [
@@ -121,7 +137,7 @@ export const QUESTIONS = [
   },
   {
     q: "How is this eco-friendly?",
-    a: "Our trays are made from a biodegradable polymer (ASTM D6400) that breaks down in commercial composting, with zero-waste, recyclable packaging.",
+    a: "We are introducing a first-of-its-kind aligner recycling programme from India. Our patented, lower-plastic approach combines tray recovery, green energy and carbon-credit action, with zero microplastics intended to enter the body.",
   },
   {
     q: "How do I start?",
@@ -482,8 +498,16 @@ export const COMMITMENTS = [
     line: "Eco-certified material that breaks down in commercial composting.",
   },
   {
-    title: "Zero-waste delivery",
-    line: "Recyclable, compostable packaging from tray one to the finished course.",
+    title: "Aligner recycling programme",
+    line: "Return finished trays through our recovery loop instead of sending them to landfill.",
+  },
+  {
+    title: "Patented lower-plastic technology",
+    line: "A first-of-its-kind approach from India, designed for less plastic and very low microplastics.",
+  },
+  {
+    title: "Green energy and carbon credits",
+    line: "10,000+ EcoTrays delivered and 10,000 carbon credits secured as we take an Indian initiative to the global market.",
   },
   {
     title: "Digital-first records",

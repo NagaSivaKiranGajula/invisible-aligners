@@ -1,7 +1,7 @@
 import { Link } from "@tanstack/react-router";
 import { Clock, MapPin, MessageCircle, Phone, Star } from "lucide-react";
 
-import { NAV, SITE } from "@/lib/site-data";
+import { NAV, SITE, SUSTAINABILITY } from "@/lib/site-data";
 import { BrandLockup } from "./logo";
 
 export function SiteFooter() {
@@ -13,6 +13,9 @@ export function SiteFooter() {
           <p className="prose-site mt-5 text-[0.95rem]">
             Clear aligners grown from plant-based material, planned by dentists
             at our Chennai experience center.
+          </p>
+          <p className="mt-4 text-[0.9rem] leading-relaxed text-mint">
+            {SUSTAINABILITY.trayCount} EcoTrays delivered. {SUSTAINABILITY.creditCount} carbon credits secured. Introducing our aligner recycling programme from India to the world.
           </p>
           <p className="mono-label mt-6 flex items-center gap-2 text-mint">
             <Star className="h-3.5 w-3.5 fill-mint" aria-hidden="true" />

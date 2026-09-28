@@ -35,12 +35,16 @@ export function BrandLockup({
   className?: string;
 }) {
   return (
-    <span className={`inline-flex items-center ${className}`}>
-      <img
-        src="/assets/logo/Ecoligners-nobg.png"
-        alt="Ecoligners"
-        className="h-12 w-auto max-w-[70vw] object-contain brightness-150 saturate-125"
-      />
+    <span className={`inline-flex items-center gap-2.5 ${className}`}>
+      <LogoMark className="h-7 w-7 text-mint" />
+      <span className="leading-tight">
+        <span className="block text-[0.98rem] font-bold tracking-tight text-bone">
+          Invisible Aligners
+        </span>
+        <span className="mono-label block text-[0.6rem] uppercase tracking-[0.22em]">
+          Eco aligners
+        </span>
+      </span>
     </span>
   );
 }

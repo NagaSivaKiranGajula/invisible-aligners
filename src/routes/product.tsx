@@ -9,6 +9,7 @@ import {
   MATERIAL_FACTS,
   QUESTIONS,
   STEPS,
+  SUSTAINABILITY,
   TRAY_TIMELINE,
 } from "@/lib/site-data";
 
@@ -35,7 +36,9 @@ const SPECS = [
   { label: "PLAN", value: "Digitally planned from a 3D scan, with a smile preview" },
   { label: "STARTER KIT", value: "Free carry case and cleaning crystals with every first tray" },
   { label: "GUARANTEE", value: "Lifetime Smile Guarantee with free refinement aligners" },
-  { label: "AFTER USE", value: "Biodegradable, compostable material (ASTM D6400)" },
+  { label: "AFTER USE", value: "Return finished trays through our aligner recycling programme" },
+  { label: "TECHNOLOGY", value: "Patented, lower-plastic technology with green energy and carbon-credit action" },
+  { label: "MICROPLASTICS", value: "Designed for very low microplastics, with zero intended to enter the body" },
 ];
 
 const LIFE_ICONS: Record<string, typeof Clock> = {
@@ -146,6 +149,11 @@ function SpecSheet() {
               <p className="mt-3 text-sm leading-relaxed text-fog">{fact.line}</p>
             </div>
           ))}
+        </div>
+        <div data-rise className="mt-10 rounded-2xl border hairline bg-mint p-8 text-lagoon-950">
+          <p className="eyebrow text-lagoon-950">{SUSTAINABILITY.recycleTitle}</p>
+          <p className="mt-4 max-w-3xl text-lg leading-relaxed">{SUSTAINABILITY.recycleLine}</p>
+          <p className="mono-label mt-5 uppercase tracking-[0.16em]">{SUSTAINABILITY.patentTitle}: {SUSTAINABILITY.patentLine}</p>
         </div>
       </div>
     </section>

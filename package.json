@@ -11,7 +11,7 @@
     "lint": "eslint .",
     "format": "prettier --write .",
     "typecheck": "tsr generate && tsc --noEmit",
-    "check:ui": "node scripts/check-ui.mjs",
+    "check:ui": "bun scripts/check-ui.mjs",
     "test": "bun test tests/*.test.ts"
   },
   "dependencies": {

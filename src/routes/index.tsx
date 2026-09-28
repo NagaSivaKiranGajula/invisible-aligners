@@ -11,6 +11,7 @@ import {
   QUESTIONS,
   SITE,
   STEPS,
+  SUSTAINABILITY,
   TESTIMONIALS,
   TREATMENTS,
 } from "@/lib/site-data";
@@ -58,8 +59,8 @@ function Metrics() {
   const metrics = [
     { value: "5.0", caption: "Google rating" },
     { value: "71", caption: "Patient reviews" },
-    { value: "0", caption: "Trays to landfill" },
-    { value: "100%", caption: "Plant-based trays" },
+    { value: SUSTAINABILITY.trayCount, caption: SUSTAINABILITY.trayLabel },
+    { value: SUSTAINABILITY.creditCount, caption: SUSTAINABILITY.creditLabel },
   ];
   return (
     <section className="border-b hairline bg-lagoon-950">
@@ -102,8 +103,9 @@ function MaterialSection() {
           </h2>
           <p className="prose-site mt-6">
             Every tray starts as a plant-derived polymer, shaped by a laser-cut
-            digital plan. Wear it, then hand it back: finished trays return to
-            us for recycling instead of a landfill.
+            digital plan. Wear it, then hand it back through our first-of-its-kind
+            aligner recycling programme, designed for less plastic and very low
+            microplastics.
           </p>
           <dl className="mt-9 divide-y hairline border-y hairline">
             {MATERIAL_FACTS.map((fact) => (
@@ -153,6 +155,32 @@ function Lifecycle() {
             </li>
           ))}
         </ol>
+      </div>
+    </section>
+  );
+}
+
+function SustainabilityBanner() {
+  return (
+    <section className="border-t hairline bg-mint py-16 text-lagoon-950 md:py-20">
+      <div className="shell grid gap-10 lg:grid-cols-[1.1fr_1fr] lg:items-end">
+        <div data-rise>
+          <p className="eyebrow text-lagoon-950">India to the world</p>
+          <h2 className="display-2 mt-4 !text-black">{SUSTAINABILITY.headline}</h2>
+          <p className="mt-5 max-w-2xl text-base leading-relaxed text-lagoon-800">
+            {SUSTAINABILITY.intro}
+          </p>
+        </div>
+        <div data-rise className="grid gap-px overflow-hidden rounded-2xl border border-lagoon-950/20 bg-lagoon-950/20 sm:grid-cols-2">
+          <div className="bg-mint p-6">
+            <p className="text-4xl font-bold tracking-tighter">{SUSTAINABILITY.trayCount}</p>
+            <p className="mono-label mt-2 uppercase tracking-[0.16em]">{SUSTAINABILITY.trayLabel}</p>
+          </div>
+          <div className="bg-mint p-6">
+            <p className="text-4xl font-bold tracking-tighter">{SUSTAINABILITY.creditCount}</p>
+            <p className="mono-label mt-2 uppercase tracking-[0.16em]">{SUSTAINABILITY.creditLabel}</p>
+          </div>
+        </div>
       </div>
     </section>
   );
@@ -465,6 +493,7 @@ function Index() {
       <Marquee />
       <Metrics />
       <MaterialSection />
+      <SustainabilityBanner />
       <Lifecycle />
       <Compare />
       <ProductBento />
