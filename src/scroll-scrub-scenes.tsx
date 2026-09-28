@@ -26,7 +26,7 @@ export const scrollScrubScenes: ScrollScrubScene[] = [
     clip: assetUrl("/assets/world/scene-01.mp4"),
     id: "journey",
     kicker: "EcoAligners",
-    label: "The journey",
+    label: "",
     mobileClip: assetUrl("/assets/world/scene-01-mobile.mp4"),
     mobilePoster: assetUrl("/assets/world/scene-01-mobile-poster.jpg"),
     poster: assetUrl("/assets/world/scene-01-poster.jpg"),

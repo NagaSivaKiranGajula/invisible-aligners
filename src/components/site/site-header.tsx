@@ -19,10 +19,10 @@ export function SiteHeader() {
 
   return (
     <header
-      className={`fixed inset-x-0 top-0 z-50 transition-colors duration-300 ${
+      className={`fixed inset-x-0 top-0 z-[70] transition-colors duration-300 ${
         scrolled || open
           ? "border-b hairline bg-lagoon-950/90 backdrop-blur-md"
-          : "border-b border-transparent bg-transparent"
+          : "border-b border-transparent bg-gradient-to-b from-lagoon-950/85 via-lagoon-950/40 to-transparent"
       }`}
     >
       <div className="shell flex h-16 items-center justify-between gap-6">

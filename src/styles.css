@@ -459,7 +459,7 @@
 
 /* Hide the engine's built-in chapter route (we compose our own nav) */
 .scroll-scrub__route {
-  display: none;
+  display: none !important;
 }
 
 /* Headline emphasis: italic same-family word */
