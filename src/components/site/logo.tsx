@@ -37,9 +37,9 @@ export function BrandLockup({
   return (
     <span className={`inline-flex items-center ${className}`}>
       <img
-        src="/assets/logo/Ecoligners-nobg.png"
+        src="/assets/logo/EcoAligners-bone.png"
         alt="EcoAligners"
-        className="h-12 w-auto max-w-[70vw] object-contain brightness-150 saturate-125"
+        className="h-12 w-auto max-w-[70vw] object-contain"
       />
     </span>
   );
