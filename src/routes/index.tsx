@@ -204,7 +204,7 @@ function Compare() {
           <div className="hidden grid-cols-[1.1fr_1.25fr_1.25fr] gap-4 px-6 py-4 md:grid">
             <span />
             <span className="mono-label uppercase tracking-[0.16em] text-mint">
-              Invisible aligners
+              EcoAligners
             </span>
             <span className="mono-label uppercase tracking-[0.16em] text-fog">
               Metal braces

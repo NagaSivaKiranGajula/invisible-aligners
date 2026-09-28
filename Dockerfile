@@ -1,4 +1,4 @@
-# Invisible Aligners — containerized hosting (client-rendered SPA mode).
+# EcoAligners — containerized hosting (client-rendered SPA mode).
 # Build:  docker build -t invisible-aligners .
 # Run:    docker run -p 8080:80 invisible-aligners
 

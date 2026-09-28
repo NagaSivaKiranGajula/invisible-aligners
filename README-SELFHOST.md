@@ -1,6 +1,6 @@
-# Invisible Aligners — self-hosting guide
+# EcoAligners — self-hosting guide
 
-Full source of the Invisible Aligners website: React 19 + TanStack Start
+Full source of the EcoAligners website: React 19 + TanStack Start
 (SSR), Tailwind v4, custom black-and-white design system, scroll-scrub
 cinematic film, provider locator, dentist partnership funnel and WhatsApp
 booking forms.

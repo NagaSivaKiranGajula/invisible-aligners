@@ -1,4 +1,4 @@
-# Invisible Aligners — Apache config for the static export
+# EcoAligners — Apache config for the static export
 # Used by GoDaddy shared/cPanel hosting. Copy this file as .htaccess into
 # the web root (it is already placed there by install-godaddy.sh).
 

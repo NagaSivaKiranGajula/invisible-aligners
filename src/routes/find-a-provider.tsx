@@ -26,11 +26,11 @@ import { assetUrl } from "@/lib/asset-url";
 export const Route = createFileRoute("/find-a-provider")({
   head: () => ({
     meta: [
-      { title: "Find a provider | Invisible Aligners" },
+      { title: "Find a provider | EcoAligners" },
       {
         name: "description",
         content:
-          "Search by postal code to find a dentist who carries Invisible Aligners. The Chennai studio plans every smile; network practices appear as they join.",
+          "Search by postal code to find a dentist who carries EcoAligners. The Chennai studio plans every smile; network practices appear as they join.",
       },
     ],
   }),
@@ -75,7 +75,7 @@ function ProviderLocator() {
             A dentist who carries our trays, <span className="italic-word">near your home</span>
           </h1>
           <p className="prose-site mt-6">
-            Enter a postal code to find practices that offer Invisible Aligners
+            Enter a postal code to find practices that offer EcoAligners
             aligners. Every smile is planned at the Chennai studio; partner
             dentists co-manage the journey closer to you.
           </p>

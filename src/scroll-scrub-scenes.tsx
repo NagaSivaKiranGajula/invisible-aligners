@@ -25,7 +25,7 @@ export const scrollScrubScenes: ScrollScrubScene[] = [
     body: "Straighten your smile, discreetly. Clear, biodegradable aligners, planned by dentists and invisible to everyone but you.",
     clip: assetUrl("/assets/world/scene-01.mp4"),
     id: "journey",
-    kicker: "Invisible Aligners",
+    kicker: "EcoAligners",
     label: "The journey",
     mobileClip: assetUrl("/assets/world/scene-01-mobile.mp4"),
     mobilePoster: assetUrl("/assets/world/scene-01-mobile-poster.jpg"),

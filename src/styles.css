@@ -19,7 +19,7 @@
 @custom-variant dark (&:where([data-theme="default-dark"], [data-theme="default-dark"] *));
 
 /* ------------------------------------------------------------------ */
-/* Invisible Aligners — brand token layer (design brief)    */
+/* EcoAligners — brand token layer (design brief)    */
 /* ------------------------------------------------------------------ */
 @theme {
   --spacing: 0.25rem;

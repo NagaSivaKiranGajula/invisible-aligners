@@ -16,7 +16,7 @@ import {
 export const Route = createFileRoute("/product")({
   head: () => ({
     meta: [
-      { title: "The aligners | Invisible Aligners" },
+      { title: "The aligners | EcoAligners" },
       {
         name: "description",
         content:
@@ -127,7 +127,7 @@ function SpecSheet() {
           <h2 className="display-2 max-w-xl">
             The spec sheet, <span className="italic-word">read clean</span>
           </h2>
-          <p className="mono-label">Invisible Aligners · Edition 01</p>
+          <p className="mono-label">EcoAligners · Edition 01</p>
         </div>
         <dl data-rise className="mt-10 border-t hairline">
           {SPECS.map((spec) => (

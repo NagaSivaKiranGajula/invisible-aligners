@@ -7,7 +7,7 @@ import { COMMITMENTS, JOURNEY_SO_FAR, RECOGNITION, SITE, TEAM } from "@/lib/site
 export const Route = createFileRoute("/about")({
   head: () => ({
     meta: [
-      { title: "About | Invisible Aligners" },
+      { title: "About | EcoAligners" },
       {
         name: "description",
         content:
@@ -107,7 +107,7 @@ function AboutPage() {
               Crafted by expertise. <span className="italic-word">Led by excellence.</span>
             </h1>
             <p className="prose-site mt-6">
-              Invisible Aligners makes confident, beautiful smiles accessible
+              EcoAligners makes confident, beautiful smiles accessible
               through precision-driven, American-manufactured clear aligner
               technology, guided by professional dental expertise.
             </p>

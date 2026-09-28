@@ -16,7 +16,7 @@ import { AMENITIES, DIRECTIONS, SITE } from "@/lib/site-data";
 export const Route = createFileRoute("/contact")({
   head: () => ({
     meta: [
-      { title: "Contact | Invisible Aligners" },
+      { title: "Contact | EcoAligners" },
       {
         name: "description",
         content:
@@ -305,7 +305,7 @@ function ContactPage() {
             <a
               href={SITE.phoneHref}
               className="cta-chip"
-              aria-label="Call Invisible Aligners"
+              aria-label="Call EcoAligners"
             >
               <span className="chip-dot" aria-hidden="true" />
               {SITE.phoneDisplay}
@@ -324,7 +324,7 @@ function ContactPage() {
           __html: JSON.stringify({
             "@context": "https://schema.org",
             "@type": "MedicalClinic",
-            name: "Invisible Aligners",
+            name: "EcoAligners",
             telephone: "+919884664277",
             url: "https://invisibledentalandaesthetics.com",
             address: {

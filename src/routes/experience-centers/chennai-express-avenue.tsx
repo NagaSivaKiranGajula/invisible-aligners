@@ -24,7 +24,7 @@ export const Route = createFileRoute(
   head: () => ({
     meta: [
       {
-        title: "Chennai Express Avenue center | Invisible Aligners",
+        title: "Chennai Express Avenue center | EcoAligners",
       },
       {
         name: "description",
@@ -360,7 +360,7 @@ function ChennaiPage() {
           __html: JSON.stringify({
             "@context": "https://schema.org",
             "@type": "Dentist",
-            name: "Invisible Aligners",
+            name: "EcoAligners",
             telephone: "+919884664277",
             url: "https://invisibledentalandaesthetics.com",
             address: {

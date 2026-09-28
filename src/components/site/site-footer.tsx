@@ -92,7 +92,7 @@ export function SiteFooter() {
 
       <div className="border-t hairline">
         <div className="shell flex flex-col gap-2 py-6 text-[0.8rem] text-fog md:flex-row md:items-center md:justify-between">
-          <p>© 2026 Invisible Aligners. All rights reserved.</p>
+          <p>© 2026 EcoAligners. All rights reserved.</p>
           <p className="mono-label">{SITE.webDomain}</p>
         </div>
       </div>

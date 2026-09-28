@@ -1,12 +1,12 @@
 import { assetUrl } from "@/lib/asset-url";
 
-/** Brand data for Invisible Aligners. Content mirrors the business's own
+/** Brand data for EcoAligners. Content mirrors the business's own
  * website (owner-supplied content document), with product specs and team
  * copied faithfully. */
 
 export const SITE = {
-  name: "Invisible Aligners",
-  product: "Invisible Aligners",
+  name: "EcoAligners",
+  product: "EcoAligners",
   tagline: "Straighten your smile. Discreetly.",
   phoneDisplay: "+91 98846 64277",
   phoneHref: "tel:+919884664277",
@@ -52,7 +52,7 @@ export const NAV = [
 
 export const TREATMENTS = [
   {
-    name: "Invisible aligners",
+    name: "EcoAligners",
     line: "Clear, custom trays that move your teeth in gentle stages.",
   },
   {
@@ -312,7 +312,7 @@ export const PROVIDERS = [
   {
     id: "chennai-studio",
     kind: "studio",
-    name: "Invisible Aligners Studio",
+    name: "EcoAligners Studio",
     tagline: "Scans, plans and check-ins at the Express Avenue experience center.",
     pincode: "600014",
     area: "Royapettah, Chennai",
@@ -449,7 +449,7 @@ export const JOURNEY_SO_FAR = [
   {
     n: "01",
     title: "The studio opens",
-    line: "Invisible Aligners opens at Express Avenue, on level 4 of EA Chambers II.",
+    line: "EcoAligners opens at Express Avenue, on level 4 of EA Chambers II.",
   },
   {
     n: "02",

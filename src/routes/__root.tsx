@@ -19,7 +19,7 @@ import { SiteFooter } from "../components/site/site-footer";
 import { SiteMotion } from "../components/site/site-motion";
 
 
-const DEFAULT_TITLE = "Invisible Aligners";
+const DEFAULT_TITLE = "EcoAligners";
 const DEFAULT_DESCRIPTION =
   "Straighten your smile, discreetly. USA-designed, biodegradable clear aligners planned by dentists at our Chennai studio.";
 

@@ -26,7 +26,7 @@ export function SiteHeader() {
       }`}
     >
       <div className="shell flex h-16 items-center justify-between gap-6">
-        <Link to="/" aria-label="Invisible Aligners home" onClick={() => setOpen(false)}>
+        <Link to="/" aria-label="EcoAligners home" onClick={() => setOpen(false)}>
           <BrandLockup compact />
         </Link>
 

@@ -31,7 +31,7 @@ import { CLINICAL_CHECKS, PARTNER_FAQ, PARTNER_KIT, PARTNER_STEPS, SITE } from "
 export const Route = createFileRoute("/dentists")({
   head: () => ({
     meta: [
-      { title: "For dentists | Invisible Aligners" },
+      { title: "For dentists | EcoAligners" },
       {
         name: "description",
         content:

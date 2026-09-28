@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Invisible Aligners — installer for a GoDaddy Linux server (VPS or any
+# EcoAligners — installer for a GoDaddy Linux server (VPS or any
 # Linux box with SSH). For shared/cPanel hosting, see INSTALL-GODADDY.md
 # (you only need the dist-static/ output).
 #

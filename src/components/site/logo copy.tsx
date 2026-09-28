@@ -39,7 +39,7 @@ export function BrandLockup({
       <LogoMark className="h-7 w-7 text-mint" />
       <span className="leading-tight">
         <span className="block text-[0.98rem] font-bold tracking-tight text-bone">
-          Invisible Aligners
+          EcoAligners
         </span>
         <span className="mono-label block text-[0.6rem] uppercase tracking-[0.22em]">
           Eco aligners

@@ -7,7 +7,7 @@ import { SITE, VISIT_FLOW } from "@/lib/site-data";
 export const Route = createFileRoute("/experience-centers")({
   head: () => ({
     meta: [
-      { title: "Experience centers | Invisible Aligners" },
+      { title: "Experience centers | EcoAligners" },
       {
         name: "description",
         content:
@@ -112,7 +112,7 @@ function CentersPage() {
             <div className="relative min-h-[18rem]">
               <img
                 src={assetUrl("/assets/clinic-reception.jpg")}
-                alt="Reception of the Invisible Aligners experience center"
+                alt="Reception of the EcoAligners experience center"
                 className="absolute inset-0 h-full w-full object-cover"
                 loading="lazy"
                 decoding="async"
