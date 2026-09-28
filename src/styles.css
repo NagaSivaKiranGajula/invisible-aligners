@@ -25,15 +25,15 @@
   --spacing: 0.25rem;
 
   /* Deep lagoon palette — one accent: sea-glass mint */
-  --color-lagoon-950: #000000;
-  --color-lagoon-900: #0a0a0a;
-  --color-lagoon-800: #161616;
-  --color-lagoon-700: #222222;
-  --color-line-ink: #2e2e2e;
-  --color-bone: #f7f7f5;
-  --color-fog: #9d9d9d;
-  --color-mint: #ffffff;
-  --color-mint-bright: #e6e6e6;
+  --color-lagoon-950: #05100f;
+  --color-lagoon-900: #0b2320;
+  --color-lagoon-800: #0f2f2a;
+  --color-lagoon-700: #16403a;
+  --color-line-ink: #23473f;
+  --color-bone: #edf2e9;
+  --color-fog: #a6bcb3;
+  --color-mint: #7fd8b8;
+  --color-mint-bright: #a5e6cc;
 
   --font-sans: "Satoshi", ui-sans-serif, system-ui, sans-serif;
   --font-mono: "JetBrains Mono", ui-monospace, "SFMono-Regular", monospace;
@@ -483,6 +483,4 @@
 
 /* Monochrome photography to match the black and white identity: every
  * generated photo and the scrub film render in grayscale. */
-main img {
-  filter: grayscale(1) contrast(1.06);
-}
+

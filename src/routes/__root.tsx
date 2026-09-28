@@ -67,7 +67,7 @@ function buildHead(meta: AppMeta) {
       { property: "og:title", content: title },
       { property: "og:description", content: description },
       { property: "og:type", content: "website" },
-      { name: "theme-color", content: `#${"0a0a0a"}` },
+      { name: "theme-color", content: `#${"0B2320"}` },
       {
         name: "twitter:card",
         content: ogImage ? "summary_large_image" : "summary",

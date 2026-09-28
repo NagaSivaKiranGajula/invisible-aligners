@@ -4,8 +4,8 @@
   "description": "Eco-solvent, recyclable and reusable clear aligners and cosmetic dentistry in Chennai.",
   "start_url": "/",
   "display": "standalone",
-  "background_color": "#000000",
-  "theme_color": "#0a0a0a",
+  "background_color": "#05100f",
+  "theme_color": "#0B2320",
   "icons": [
     {
       "src": "/assets/branding/icon-192.png",

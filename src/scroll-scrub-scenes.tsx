@@ -14,10 +14,10 @@ import { Link } from "@tanstack/react-router";
 
 /** Brand tokens for the journey layer (deep lagoon palette, design brief). */
 export const scrollScrubTheme: ScrollScrubTheme = {
-  accent: "#FFFFFF",
-  background: "#0a0a0a",
-  ink: "#F7F7F5",
-  muted: "#9d9d9d",
+  accent: "#7FD8B8",
+  background: "#0B2320",
+  ink: "#EDF2E9",
+  muted: "#A6BCB3",
 };
 
 export const scrollScrubScenes: ScrollScrubScene[] = [
