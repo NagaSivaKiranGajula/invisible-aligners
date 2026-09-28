@@ -1,4 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
+import { EcoPillars } from "@/components/site/eco-pillars";
 import { Quote, UserRound } from "lucide-react";
 
 import { assetUrl } from "@/lib/asset-url";
@@ -152,6 +153,7 @@ function AboutPage() {
       <Recognition />
       <Journey />
       <Values />
+      <EcoPillars />
       <Commitments />
 
       <section className="border-t hairline bg-lagoon-950 py-20 md:py-28">

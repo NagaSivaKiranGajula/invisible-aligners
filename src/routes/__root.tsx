@@ -21,7 +21,7 @@ import { SiteMotion } from "../components/site/site-motion";
 
 const DEFAULT_TITLE = "EcoAligners";
 const DEFAULT_DESCRIPTION =
-  "Straighten your smile, discreetly. USA-designed, biodegradable clear aligners planned by dentists at our Chennai studio.";
+  "Straighten your smile, discreetly. USA-designed, eco-solvent, recyclable and reusable clear aligners planned by dentists at our Chennai studio.";
 
 type AppMeta = {
   og_title?: string | null;

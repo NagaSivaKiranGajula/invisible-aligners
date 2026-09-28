@@ -1,4 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
+import { EcoPillars } from "@/components/site/eco-pillars";
 import { ArrowRight, Clock, MapPin, Phone, Star } from "lucide-react";
 
 import { assetUrl } from "@/lib/asset-url";
@@ -165,6 +166,7 @@ function CentersPage() {
       </section>
 
       <PlanVisit />
+      <EcoPillars variant="line" />
       <CenterFaq />
 
       <section className="border-t hairline bg-lagoon-900 py-16">

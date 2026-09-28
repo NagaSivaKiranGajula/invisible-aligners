@@ -1,4 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
+import { EcoPillars } from "@/components/site/eco-pillars";
 import {
   ArrowRight,
   CalendarClock,
@@ -492,6 +493,7 @@ function DentistsPage() {
       <CaseStudies />
       <ClinicalChecklist />
       <PartnerKit />
+      <EcoPillars variant="line" />
       <StepsSection />
       <ApplySection />
 

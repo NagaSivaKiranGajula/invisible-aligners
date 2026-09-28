@@ -28,18 +28,41 @@ export const SITE = {
 export const SUSTAINABILITY = {
   headline: "India's next smile export is built for a greener world.",
   intro:
-    "We are introducing a first-of-its-kind aligner recycling programme from India, combining patented technology, green energy and a lower-plastic approach for a global market.",
+    "We are introducing a first-of-its-kind aligner recycling programme from India, built on eco-solvent processing, a reusable material loop, patented technology and green energy for a global market.",
   trayCount: "10,000+",
   trayLabel: "EcoTrays delivered",
   creditCount: "10,000",
   creditLabel: "Carbon credits secured",
   recycleTitle: "The first aligner recycling programme of its kind",
   recycleLine:
-    "Return finished trays through our recycling loop instead of sending them to landfill. Our goal is less plastic, very low microplastics and zero microplastics intended to enter the body.",
+    "Return finished trays through our recycling loop instead of sending them to landfill. The recovered polymer is reused in new production, with less plastic, very low microplastics and zero microplastics intended to enter the body.",
   patentTitle: "Patented, lower-plastic technology",
   patentLine:
     "A material and recovery system designed to reduce plastic use while supporting green energy and measurable carbon-credit action.",
 } as const;
+
+export const ECO_PILLARS = [
+  {
+    icon: "solvent",
+    title: "Eco-solvent made",
+    line: "Produced with eco-solvent processing instead of harsh industrial chemistry.",
+  },
+  {
+    icon: "recycle",
+    title: "Fully recyclable",
+    line: "Finished trays go back into our recovery loop, not into landfill.",
+  },
+  {
+    icon: "reuse",
+    title: "Reusable material",
+    line: "Recovered polymer is reprocessed and reused in new production.",
+  },
+  {
+    icon: "compost",
+    title: "Completely eco-friendly",
+    line: "BPA-free, biodegradable and shipped zero-waste from tray one.",
+  },
+] as const;
 
 export const NAV = [
   { to: "/product", label: "The aligners" },
@@ -112,7 +135,10 @@ export const MATERIAL_FACTS = [
   { label: "BPA-FREE POLYMER", line: "Medical-grade, hypoallergenic material, safe for long-term wear." },
   { label: "BIO-DEGRADABLE", line: "Eco-certified to break down in commercial composting (ASTM D6400)." },
   { label: "MATTE FINISH", line: "Glare-free and stain-resistant, crystal clear through every tray." },
-  { label: "RECYCLING PROGRAMME", line: "Return finished trays through our recovery loop, with less plastic and very low microplastics." },
+  { label: "ECO-SOLVENT", line: "Production runs on eco-solvent processing, not harsh industrial chemistry." },
+  { label: "RECYCLABLE", line: "Return finished trays through our recovery loop, with less plastic and very low microplastics." },
+  { label: "REUSABLE", line: "Recovered polymer is reprocessed and reused in new trays." },
+  { label: "ZERO-WASTE KIT", line: "Recyclable, compostable packaging with a free case and cleaning crystals." },
 ] as const;
 
 export const AMENITIES = [
@@ -137,11 +163,15 @@ export const QUESTIONS = [
   },
   {
     q: "How is this eco-friendly?",
-    a: "We are introducing a first-of-its-kind aligner recycling programme from India. Our patented, lower-plastic approach combines tray recovery, green energy and carbon-credit action, with zero microplastics intended to enter the body.",
+    a: "Every tray is made with eco-solvent processing, fully recyclable and, once returned, the recovered polymer is reused. Our patented, lower-plastic approach adds green energy and carbon-credit action, with zero microplastics intended to enter the body.",
   },
   {
     q: "How do I start?",
     a: "Book a consultation. We scan your smile, show you a digital simulation of the result, and your first tray is ready within days.",
+  },
+  {
+    q: "Are the aligners reusable?",
+    a: "The material is. Wear each tray for its cycle, then hand it back: we recover and reprocess the polymer so it is reused in new production instead of being thrown away.",
   },
   {
     q: "Can I eat and drink with the trays in?",
@@ -493,6 +523,14 @@ export const RECOGNITION = [
 ] as const;
 
 export const COMMITMENTS = [
+  {
+    title: "Eco-solvent production",
+    line: "Trays are made with eco-solvent processing instead of harsh industrial chemistry.",
+  },
+  {
+    title: "Reusable material loop",
+    line: "Recovered trays are reprocessed and the polymer reused in new production.",
+  },
   {
     title: "Biodegradable trays",
     line: "Eco-certified material that breaks down in commercial composting.",

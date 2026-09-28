@@ -1,4 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
+import { EcoPillars } from "@/components/site/eco-pillars";
 import { useState } from "react";
 import {
   Check,
@@ -310,6 +311,7 @@ function ProviderLocator() {
           </Link>
         </div>
       </section>
+      <EcoPillars variant="line" />
     </main>
   );
 }

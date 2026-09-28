@@ -1,4 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
+import { EcoPillars } from "@/components/site/eco-pillars";
 import {
   Accessibility,
   ArrowRight,
@@ -325,6 +326,7 @@ function ChennaiPage() {
       </section>
 
       <VisitFlow />
+      <EcoPillars variant="line" />
 
       <section className="border-t hairline bg-lagoon-950 py-20">
         <div className="shell flex flex-col items-start justify-between gap-8 md:flex-row md:items-center">

@@ -1,4 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
+import { EcoPillars } from "@/components/site/eco-pillars";
 import { Check, Clock, Minus, Package, ShieldCheck, Sparkles, UtensilsCrossed } from "lucide-react";
 
 import { assetUrl } from "@/lib/asset-url";
@@ -39,6 +40,9 @@ const SPECS = [
   { label: "AFTER USE", value: "Return finished trays through our aligner recycling programme" },
   { label: "TECHNOLOGY", value: "Patented, lower-plastic technology with green energy and carbon-credit action" },
   { label: "MICROPLASTICS", value: "Designed for very low microplastics, with zero intended to enter the body" },
+  { label: "ECO-SOLVENT", value: "Produced with eco-solvent processing, not harsh industrial chemistry" },
+  { label: "RECYCLABLE", value: "Finished trays return to our loop and are recovered" },
+  { label: "REUSABLE", value: "Recovered polymer is reprocessed and reused in new production" },
 ];
 
 const LIFE_ICONS: Record<string, typeof Clock> = {
@@ -278,7 +282,7 @@ function ProductPage() {
             </h1>
             <p className="prose-site mt-6">
               Every tray is designed and manufactured in the USA from
-              biodegradable, BPA-free polymer, laser-fit to a dentist-planned
+              eco-solvent, recyclable, reusable, biodegradable polymer, laser-fit to a dentist-planned
               course. Straightening your teeth has never been this quiet.
             </p>
             <Link to="/contact" className="cta-smile mt-9" aria-label="Book a consultation">
@@ -316,6 +320,7 @@ function ProductPage() {
       <SpecSheet />
       <Timeline />
       <LifeWithAligners />
+      <EcoPillars />
       <Guarantee />
 
       <section className="border-t hairline bg-lagoon-900 py-20 md:py-28">

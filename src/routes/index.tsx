@@ -1,4 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
+import { EcoPillars } from "@/components/site/eco-pillars";
 import { ArrowRight, Check, MapPin, Quote } from "lucide-react";
 
 import { ScrollScrub } from "@/components/scroll-scrub/scroll-scrub";
@@ -22,7 +23,9 @@ export const Route = createFileRoute("/")({
 
 const MARQUEE_ITEMS = [
   "BPA-free",
+  "Eco-solvent",
   "Recyclable",
+  "Reusable",
   "Biodegradable",
   "Invisible",
   "American designed",
@@ -495,6 +498,7 @@ function Index() {
       <MaterialSection />
       <SustainabilityBanner />
       <Lifecycle />
+      <EcoPillars />
       <Compare />
       <ProductBento />
       <Treatments />

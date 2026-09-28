@@ -1,4 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { EcoPillars } from "@/components/site/eco-pillars";
 import {
   Accessibility,
   Car,
@@ -56,6 +57,7 @@ const INFO_CARDS = [
       ...AMENITIES,
       "High-tech diagnostic equipment",
       "Sedation dentistry available",
+      "Tray recycling point on site",
     ],
     href: null,
     hrefLabel: "",
@@ -339,6 +341,7 @@ function ContactPage() {
           }),
         }}
       />
+      <EcoPillars variant="line" />
     </main>
   );
 }
