@@ -30,7 +30,7 @@ export const scrollScrubScenes: ScrollScrubScene[] = [
     mobileClip: assetUrl("/assets/world/scene-01-mobile.mp4"),
     mobilePoster: assetUrl("/assets/world/scene-01-mobile-poster.jpg"),
     poster: assetUrl("/assets/world/scene-01-poster.jpg"),
-    scroll: 5,
+    scroll: 1.5,
     tags: ["5.0 on Google", "71 reviews", "BPA-free"],
     title: "Your smile, grown in plain sight",
     actions: (
