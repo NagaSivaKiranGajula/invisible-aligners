@@ -177,11 +177,11 @@ function SustainabilityBanner() {
         <div data-rise className="grid gap-px overflow-hidden rounded-2xl border border-lagoon-950/20 bg-lagoon-950/20 sm:grid-cols-2">
           <div className="bg-mint p-6">
             <p className="text-4xl font-bold tracking-tighter">{SUSTAINABILITY.trayCount}</p>
-            <p className="mono-label mt-2 uppercase tracking-[0.16em]">{SUSTAINABILITY.trayLabel}</p>
+            <p className="mono-label mt-2 text-black uppercase tracking-[0.16em]">{SUSTAINABILITY.trayLabel}</p>
           </div>
           <div className="bg-mint p-6">
             <p className="text-4xl font-bold tracking-tighter">{SUSTAINABILITY.creditCount}</p>
-            <p className="mono-label mt-2 uppercase tracking-[0.16em]">{SUSTAINABILITY.creditLabel}</p>
+            <p className="mono-label mt-2 text-black uppercase tracking-[0.16em]">{SUSTAINABILITY.creditLabel}</p>
           </div>
         </div>
       </div>
@@ -252,35 +252,35 @@ function ProductBento() {
           </Link>
         </div>
 
-        <div className="mt-14 grid gap-4 lg:grid-cols-2">
-          <div data-rise className="overflow-hidden rounded-2xl border hairline">
+        <div className="mt-14 grid gap-4 lg:auto-rows-[36rem] lg:grid-cols-2">
+          <div data-rise className="h-[51.68rem] overflow-hidden rounded-2xl border hairline lg:h-full">
             <img
               src={assetUrl("/assets/product/tray-leaf.jpg")}
               alt="Clear aligner resting beside a green leaf on dark slate"
-              className="h-full min-h-[20rem] w-full object-cover transition-transform duration-700 hover:scale-105"
+              className="h-full w-full object-cover transition-transform duration-700 hover:scale-105"
               loading="lazy"
               decoding="async"
             />
           </div>
-          <div data-rise className="overflow-hidden rounded-2xl border hairline">
+          <div data-rise className="h-96 overflow-hidden rounded-2xl border hairline lg:h-full">
             <img
-              src={assetUrl("/assets/people/smile-portrait.jpg")}
+              src={assetUrl("/assets/people/DSC08387.JPG")}
               alt="Portrait of a patient with a confident smile"
-              className="h-full min-h-[20rem] w-full object-cover object-top transition-transform duration-700 hover:scale-105"
+              className="h-full w-full object-cover object-top transition-transform duration-700 hover:scale-105"
               loading="lazy"
               decoding="async"
             />
           </div>
-          <div data-rise className="overflow-hidden rounded-2xl border hairline">
+          <div data-rise className="h-72 overflow-hidden rounded-2xl border hairline lg:h-full">
             <img
-              src={assetUrl("/assets/product/lifestyle-hands.jpg")}
+              src={assetUrl("/assets/people/DSC08381.JPG")}
               alt="Hands holding the mint-green aligner travel case"
-              className="h-full min-h-[18rem] w-full object-cover transition-transform duration-700 hover:scale-105"
+              className="h-full w-full object-cover transition-transform duration-700 hover:scale-105"
               loading="lazy"
               decoding="async"
             />
           </div>
-          <div data-rise className="rounded-2xl border hairline bg-lagoon-950 p-8">
+          <div data-rise className="rounded-2xl border hairline bg-lagoon-950 p-8 lg:h-full">
             <ol className="mt-2 grid gap-6 sm:grid-cols-2">
               {STEPS.map((step) => (
                 <li key={step.n} className="flex gap-4">

@@ -29,9 +29,9 @@ export const SUSTAINABILITY = {
   headline: "India's next smile export is built for a greener world.",
   intro:
     "We are introducing a first-of-its-kind aligner recycling programme from India, built on eco-solvent processing, a reusable material loop, patented technology and green energy for a global market.",
-  trayCount: "10,000+",
+  trayCount: "10k+",
   trayLabel: "EcoTrays delivered",
-  creditCount: "10,000",
+  creditCount: "10k+",
   creditLabel: "Carbon credits secured",
   recycleTitle: "The first aligner recycling programme of its kind",
   recycleLine:

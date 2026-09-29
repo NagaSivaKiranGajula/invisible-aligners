@@ -14,16 +14,16 @@ export function SiteFooter() {
             Clear aligners grown from plant-based material, planned by dentists
             at our Chennai experience center.
           </p>
-          <p className="mt-4 text-[0.9rem] leading-relaxed text-mint">
+          {/* <p className="mt-4 text-[0.9rem] leading-relaxed text-mint">
             {SUSTAINABILITY.trayCount} EcoTrays delivered. {SUSTAINABILITY.creditCount} carbon credits secured. Introducing our aligner recycling programme from India to the world.
-          </p>
+          </p> */}
           <p className="mono-label mt-6 uppercase tracking-[0.16em] text-mint">
             Eco-solvent · recyclable · reusable
           </p>
-          <p className="mono-label mt-6 flex items-center gap-2 text-mint">
+          {/* <p className="mono-label mt-6 flex items-center gap-2 text-mint">
             <Star className="h-3.5 w-3.5 fill-mint" aria-hidden="true" />
             {SITE.rating}, {SITE.reviews}
-          </p>
+          </p> */}
         </div>
 
         <div>
