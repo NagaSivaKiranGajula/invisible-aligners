@@ -165,7 +165,7 @@ function Lifecycle() {
 
 function SustainabilityBanner() {
   return (
-    <section className="border-t hairline bg-mint py-16 text-lagoon-950 md:py-20">
+    <section className="theme-preserve border-t hairline bg-mint py-16 text-lagoon-950 md:py-20">
       <div className="shell grid gap-10 lg:grid-cols-[1.1fr_1fr] lg:items-end">
         <div data-rise>
           <p className="eyebrow text-lagoon-950">India to the world</p>

@@ -62,7 +62,7 @@ export const CASE_STUDIES = [
     n: "01",
     title: "The solo practitioner",
     scenario:
-      "A single-chair home practice on a Chennai side street keeps losing orthodontic cases to city clinics.",
+      "A single-chair home practice keeps losing orthodontic cases to larger clinics.",
     flow: "After one Sunday onboarding, the dentist refers their first patient for a studio scan. The plan returns the same week, and check-ins run from the home chair every two to three weeks.",
     outcome:
       "Aligner check-ins settle into the practice rhythm, and per-stage fees arrive on the agreed schedule.",

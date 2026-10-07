@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link, useLocation } from "@tanstack/react-router";
-import { Phone } from "lucide-react";
+import { Moon, Phone, Sun } from "lucide-react";
+import { useTheme } from "next-themes";
 
 import { NAV, SITE } from "@/lib/site-data";
 import { BrandLockup } from "./logo";
@@ -9,6 +10,8 @@ export function SiteHeader() {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
   const { pathname } = useLocation();
+  const { resolvedTheme, setTheme } = useTheme();
+  const isLight = resolvedTheme === "light";
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 24);
@@ -20,9 +23,11 @@ export function SiteHeader() {
   return (
     <header
       className={`fixed inset-x-0 top-0 z-[70] transition-colors duration-300 ${
-        scrolled || open
-          ? "border-b hairline bg-lagoon-950/90 backdrop-blur-md"
-          : "border-b border-transparent bg-gradient-to-b from-lagoon-950/85 via-lagoon-950/40 to-transparent"
+        isLight
+          ? "border-b hairline bg-lagoon-950/95 backdrop-blur-md"
+          : scrolled || open
+            ? "border-b hairline bg-lagoon-950/90 backdrop-blur-md"
+            : "border-b border-transparent bg-gradient-to-b from-lagoon-950/85 via-lagoon-950/40 to-transparent"
       }`}
     >
       <div className="shell flex h-16 items-center justify-between gap-6">
@@ -44,6 +49,19 @@ export function SiteHeader() {
         </nav>
 
         <div className="flex items-center gap-4">
+          <button
+            type="button"
+            className="flex h-9 w-9 items-center justify-center text-bone transition-colors hover:text-mint"
+            aria-label={`Switch to ${isLight ? "dark" : "light"} mode`}
+            title={`Switch to ${isLight ? "dark" : "light"} mode`}
+            onClick={() => setTheme(isLight ? "dark" : "light")}
+          >
+            {isLight ? (
+              <Moon className="h-5 w-5" aria-hidden="true" />
+            ) : (
+              <Sun className="h-5 w-5" aria-hidden="true" />
+            )}
+          </button>
           <a
             href={SITE.phoneHref}
             className="mono-label hidden items-center gap-1.5 text-bone hover:text-mint md:inline-flex"

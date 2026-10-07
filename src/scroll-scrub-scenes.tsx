@@ -14,10 +14,10 @@ import { Link } from "@tanstack/react-router";
 
 /** Brand tokens for the journey layer (deep lagoon palette, design brief). */
 export const scrollScrubTheme: ScrollScrubTheme = {
-  accent: "#7FD8B8",
-  background: "#0B2320",
-  ink: "#EDF2E9",
-  muted: "#A6BCB3",
+  accent: "var(--color-mint)",
+  background: "var(--color-lagoon-900)",
+  ink: "var(--color-bone)",
+  muted: "var(--color-fog)",
 };
 
 export const scrollScrubScenes: ScrollScrubScene[] = [
@@ -25,7 +25,7 @@ export const scrollScrubScenes: ScrollScrubScene[] = [
     body: "Straighten your smile, discreetly. Clear, biodegradable aligners, planned by dentists and invisible to everyone but you.",
     clip: assetUrl("/assets/world/scene-01.mp4"),
     id: "journey",
-    kicker: "EcoAligners",
+    kicker: "EcoAligners · India's first eco-friendly aligners",
     label: "",
     mobileClip: assetUrl("/assets/world/scene-01-mobile.mp4"),
     mobilePoster: assetUrl("/assets/world/scene-01-mobile-poster.jpg"),

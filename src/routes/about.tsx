@@ -109,8 +109,8 @@ function AboutPage() {
             </h1>
             <p className="prose-site mt-6">
               EcoAligners makes confident, beautiful smiles accessible
-              through precision-driven, American-manufactured clear aligner
-              technology, guided by professional dental expertise.
+              through precision-driven, USA-designed clear aligner technology,
+              guided by professional dental expertise.
             </p>
             <p className="prose-site mt-5">
               Founded and owned by Dr. Shilfa Nigar, BDS, FMC (London), a

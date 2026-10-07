@@ -31,7 +31,7 @@ export const Route = createFileRoute("/product")({
 const SPECS = [
   { label: "MATERIAL", value: "Medical-grade, hypoallergenic polymer" },
   { label: "CHEMISTRY", value: "BPA-free and safe for long-term wear" },
-  { label: "ORIGIN", value: "Designed and manufactured in the USA, ISO 13485 certified" },
+  { label: "ORIGIN", value: "Designed in the USA, ISO 13485 certified" },
   { label: "FINISH", value: "Matte, glare-free and stain-resistant" },
   { label: "CYCLE", value: "One tray roughly every 14 days" },
   { label: "PLAN", value: "Digitally planned from a 3D scan, with a smile preview" },
@@ -281,8 +281,8 @@ function ProductPage() {
               Straighten your smile. <span className="italic-word">Discreetly.</span>
             </h1>
             <p className="prose-site mt-6">
-              Every tray is designed and manufactured in the USA from
-              eco-solvent, recyclable, reusable, biodegradable polymer, laser-fit to a dentist-planned
+              Every tray is designed in the USA from eco-solvent, recyclable,
+              reusable, biodegradable polymer, laser-fit to a dentist-planned
               course. Straightening your teeth has never been this quiet.
             </p>
             <Link to="/contact" className="cta-smile mt-9" aria-label="Book a consultation">

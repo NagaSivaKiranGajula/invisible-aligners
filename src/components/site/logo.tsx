@@ -39,7 +39,7 @@ export function BrandLockup({
       <img
         src="/assets/logo/EcoAligners-bone.png"
         alt="EcoAligners"
-        className="h-9 w-auto max-w-[62vw] shrink-0 object-contain sm:h-11 lg:h-12"
+        className="site-logo h-9 w-auto max-w-[62vw] shrink-0 object-contain sm:h-11 lg:h-12"
       />
     </span>
   );

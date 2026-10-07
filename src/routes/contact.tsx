@@ -166,6 +166,14 @@ function ContactPage() {
                 {card.lines.map((line) => (
                   <p key={line}>{line}</p>
                 ))}
+                {card.title === "Call or WhatsApp" ? (
+                  <a
+                    href={SITE.partnerPhoneHref}
+                    className="block pt-2 hover:text-mint"
+                  >
+                    For partners: {SITE.partnerPhoneDisplay}
+                  </a>
+                ) : null}
               </div>
               {card.href ? (
                 <a
@@ -311,6 +319,14 @@ function ContactPage() {
             >
               <span className="chip-dot" aria-hidden="true" />
               {SITE.phoneDisplay}
+            </a>
+            <a
+              href={SITE.partnerPhoneHref}
+              className="cta-chip"
+              aria-label="Call EcoAligners for partners"
+            >
+              <span className="chip-dot" aria-hidden="true" />
+              Partners: {SITE.partnerPhoneDisplay}
             </a>
             <p className="mono-label flex items-center gap-2 text-fog">
               <MessageCircle className="h-4 w-4 text-mint" aria-hidden="true" />

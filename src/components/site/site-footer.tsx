@@ -75,6 +75,13 @@ export function SiteFooter() {
               <Phone className="h-4 w-4 text-mint" aria-hidden="true" />
               {SITE.phoneDisplay}
             </a>
+            <a href={SITE.partnerPhoneHref} className="flex items-center gap-2 hover:text-mint">
+              <Phone className="h-4 w-4 text-mint" aria-hidden="true" />
+              <span>
+                <span className="block text-xs">For partners</span>
+                {SITE.partnerPhoneDisplay}
+              </span>
+            </a>
             <a
               href={SITE.whatsappHref}
               target="_blank"

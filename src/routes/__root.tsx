@@ -8,6 +8,7 @@ import {
   Scripts,
 } from "@tanstack/react-router";
 import { useEffect, type ReactNode } from "react";
+import { ThemeProvider } from "next-themes";
 
 import appCss from "../styles.css?url";
 import { reportHiggsfieldError } from "../lib/higgsfield-error-reporting";
@@ -149,7 +150,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
 
 function RootShell({ children }: { children: ReactNode }) {
   return (
-    <html lang="en" style={{ colorScheme: "dark" }}>
+    <html lang="en">
       <head>
         {/* Brand fonts: Satoshi (Fontshare) + JetBrains Mono (Google) */}
         <link
@@ -175,10 +176,12 @@ function RootComponent() {
 
   return (
     <QueryClientProvider client={queryClient}>
-      <SiteMotion />
-      <SiteHeader />
-      <Outlet />
-      <SiteFooter />
+      <ThemeProvider attribute="data-theme" defaultTheme="dark" enableSystem={false}>
+        <SiteMotion />
+        <SiteHeader />
+        <Outlet />
+        <SiteFooter />
+      </ThemeProvider>
     </QueryClientProvider>
   );
 }

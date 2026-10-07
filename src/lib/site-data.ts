@@ -10,6 +10,8 @@ export const SITE = {
   tagline: "Straighten your smile. Discreetly.",
   phoneDisplay: "+91 98846 64277",
   phoneHref: "tel:+919884664277",
+  partnerPhoneDisplay: "+91 96772 05025",
+  partnerPhoneHref: "tel:+919677205025",
   whatsappHref: "https://wa.me/919884664277",
   webDomain: "invisibledentalandaesthetics.com",
   hoursLine: "Monday to Sunday, 10:00 AM to 9:00 PM",
@@ -483,7 +485,7 @@ export const JOURNEY_SO_FAR = [
   },
   {
     n: "02",
-    title: "American-made aligners, Chennai smiles",
+    title: "USA-designed aligners, Chennai smiles",
     line: "The studio introduces USA-designed, biodegradable clear aligners.",
   },
   {

@@ -563,7 +563,7 @@ export function ScrollScrub({
 
   return (
     <section
-      className={["scroll-scrub", className].filter(Boolean).join(" ")}
+      className={["scroll-scrub", "theme-preserve", className].filter(Boolean).join(" ")}
       ref={rootRef}
       style={themeStyle}
     >
