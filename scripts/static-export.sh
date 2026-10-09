@@ -44,7 +44,7 @@ done
 
 mkdir -p "$OUT"
 
-ROUTES="/ /product /experience-centers /experience-centers/chennai-express-avenue /find-a-provider /dentists /about /contact /robots.txt /sitemap.xml"
+ROUTES="/ /product /productdetails /experience-centers /experience-centers/chennai-express-avenue /find-a-provider /dentists /about /contact /robots.txt /sitemap.xml"
 
 for route in $ROUTES; do
   if [ "$route" = "/robots.txt" ] || [ "$route" = "/sitemap.xml" ]; then

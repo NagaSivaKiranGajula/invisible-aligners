@@ -11,6 +11,7 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as RobotsDottxtRouteImport } from './routes/robots[.]txt'
+import { Route as ProductdetailsRouteImport } from './routes/productdetails'
 import { Route as ProductRouteImport } from './routes/product'
 import { Route as FindAProviderRouteImport } from './routes/find-a-provider'
 import { Route as ExperienceCentersRouteImport } from './routes/experience-centers'
@@ -28,6 +29,11 @@ const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
 const RobotsDottxtRoute = RobotsDottxtRouteImport.update({
   id: '/robots.txt',
   path: '/robots.txt',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ProductdetailsRoute = ProductdetailsRouteImport.update({
+  id: '/productdetails',
+  path: '/productdetails',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ProductRoute = ProductRouteImport.update({
@@ -80,6 +86,7 @@ export interface FileRoutesByFullPath {
   '/experience-centers': typeof ExperienceCentersRouteWithChildren
   '/find-a-provider': typeof FindAProviderRoute
   '/product': typeof ProductRoute
+  '/productdetails': typeof ProductdetailsRoute
   '/robots.txt': typeof RobotsDottxtRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/experience-centers/chennai-express-avenue': typeof ExperienceCentersChennaiExpressAvenueRoute
@@ -92,6 +99,7 @@ export interface FileRoutesByTo {
   '/experience-centers': typeof ExperienceCentersRouteWithChildren
   '/find-a-provider': typeof FindAProviderRoute
   '/product': typeof ProductRoute
+  '/productdetails': typeof ProductdetailsRoute
   '/robots.txt': typeof RobotsDottxtRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/experience-centers/chennai-express-avenue': typeof ExperienceCentersChennaiExpressAvenueRoute
@@ -105,6 +113,7 @@ export interface FileRoutesById {
   '/experience-centers': typeof ExperienceCentersRouteWithChildren
   '/find-a-provider': typeof FindAProviderRoute
   '/product': typeof ProductRoute
+  '/productdetails': typeof ProductdetailsRoute
   '/robots.txt': typeof RobotsDottxtRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/experience-centers/chennai-express-avenue': typeof ExperienceCentersChennaiExpressAvenueRoute
@@ -119,6 +128,7 @@ export interface FileRouteTypes {
     | '/experience-centers'
     | '/find-a-provider'
     | '/product'
+    | '/productdetails'
     | '/robots.txt'
     | '/sitemap.xml'
     | '/experience-centers/chennai-express-avenue'
@@ -131,6 +141,7 @@ export interface FileRouteTypes {
     | '/experience-centers'
     | '/find-a-provider'
     | '/product'
+    | '/productdetails'
     | '/robots.txt'
     | '/sitemap.xml'
     | '/experience-centers/chennai-express-avenue'
@@ -143,6 +154,7 @@ export interface FileRouteTypes {
     | '/experience-centers'
     | '/find-a-provider'
     | '/product'
+    | '/productdetails'
     | '/robots.txt'
     | '/sitemap.xml'
     | '/experience-centers/chennai-express-avenue'
@@ -156,6 +168,7 @@ export interface RootRouteChildren {
   ExperienceCentersRoute: typeof ExperienceCentersRouteWithChildren
   FindAProviderRoute: typeof FindAProviderRoute
   ProductRoute: typeof ProductRoute
+  ProductdetailsRoute: typeof ProductdetailsRoute
   RobotsDottxtRoute: typeof RobotsDottxtRoute
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
 }
@@ -174,6 +187,13 @@ declare module '@tanstack/react-router' {
       path: '/robots.txt'
       fullPath: '/robots.txt'
       preLoaderRoute: typeof RobotsDottxtRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/productdetails': {
+      id: '/productdetails'
+      path: '/productdetails'
+      fullPath: '/productdetails'
+      preLoaderRoute: typeof ProductdetailsRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/product': {
@@ -255,6 +275,7 @@ const rootRouteChildren: RootRouteChildren = {
   ExperienceCentersRoute: ExperienceCentersRouteWithChildren,
   FindAProviderRoute: FindAProviderRoute,
   ProductRoute: ProductRoute,
+  ProductdetailsRoute: ProductdetailsRoute,
   RobotsDottxtRoute: RobotsDottxtRoute,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
 }

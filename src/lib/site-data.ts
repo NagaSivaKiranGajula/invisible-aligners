@@ -68,6 +68,7 @@ export const ECO_PILLARS = [
 
 export const NAV = [
   { to: "/product", label: "The aligners" },
+  { to: "/productdetails", label: "Products" },
   { to: "/experience-centers", label: "Experience centers" },
   { to: "/find-a-provider", label: "Find a provider" },
   { to: "/dentists", label: "For dentists" },
