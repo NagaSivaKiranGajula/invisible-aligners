@@ -7,11 +7,11 @@ import { assetUrl } from "@/lib/asset-url";
 export const Route = createFileRoute("/productdetails")({
   head: () => ({
     meta: [
-      { title: "Ecoliners Lite Package | EcoAligners" },
+      { title: "Ecoligners Lite Package | EcoAligners" },
       {
         name: "description",
         content:
-          "Explore the Ecoliners Lite Package: 20 clear aligners in a thoughtfully designed package.",
+          "Explore the Ecoligners Lite Package: 20 clear aligners in a thoughtfully designed package.",
       },
     ],
   }),
@@ -37,7 +37,7 @@ function ProductDetailsPage() {
           <div className="overflow-hidden rounded-3xl border hairline bg-lagoon-900">
             <img
               src={assetUrl("/assets/product/EcolinersLitePackage.jpeg")}
-              alt="Ecoliners Lite Package"
+              alt="Ecoligners Lite Package"
               className="aspect-square w-full object-cover"
               fetchPriority="high"
             />
@@ -46,10 +46,10 @@ function ProductDetailsPage() {
           <section aria-labelledby="product-title" className="py-2">
             <p className="eyebrow">Clear aligners · Lite package</p>
             <h1 id="product-title" className="display-2 mt-4">
-              Ecoliners Lite Package
+              Ecoligners Lite Package
             </h1>
             <p className="prose-site mt-5">
-              A simple way to begin your clear-aligner journey. The Ecoliners
+              A simple way to begin your clear-aligner journey. The Ecoligners
               Lite Package includes 20 discreet aligners, thoughtfully made to
               fit into your everyday routine. Each aligner is designed for a
               comfortable, low-profile fit while you go about your day.
