@@ -7,7 +7,7 @@ import { BrandLockup } from "./logo";
 export function SiteFooter() {
   return (
     <footer className="border-t hairline bg-lagoon-950">
-      <div className="shell grid gap-12 py-16 md:grid-cols-2 lg:grid-cols-4">
+      <div className="shell grid gap-12 py-16 md:grid-cols-2 lg:grid-cols-5">
         <div>
           <BrandLockup />
           <p className="prose-site mt-5 text-[0.95rem]">
@@ -97,6 +97,33 @@ export function SiteFooter() {
             <span className="block-fill" aria-hidden="true" />
             <span className="block-label">Book a consultation</span>
           </Link>
+        </div>
+
+        <div>
+          <p className="eyebrow mb-5">Policy</p>
+          <ul className="space-y-3">
+            <li>
+              <Link to="/privacy-policy" className="text-[0.95rem] text-fog hover:text-mint">
+                Privacy Policy
+              </Link>
+            </li>
+            <li>
+              <Link
+                to="/cancellation-and-refund-policy"
+                className="text-[0.95rem] text-fog hover:text-mint"
+              >
+                Cancellation and Refund Policy
+              </Link>
+            </li>
+            <li>
+              <Link
+                to="/terms-and-conditions"
+                className="text-[0.95rem] text-fog hover:text-mint"
+              >
+                Terms and Conditions
+              </Link>
+            </li>
+          </ul>
         </div>
       </div>
 

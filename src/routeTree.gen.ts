@@ -9,18 +9,26 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as TermsAndConditionsRouteImport } from './routes/terms-and-conditions'
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as RobotsDottxtRouteImport } from './routes/robots[.]txt'
 import { Route as ProductdetailsRouteImport } from './routes/productdetails'
 import { Route as ProductRouteImport } from './routes/product'
+import { Route as PrivacyPolicyRouteImport } from './routes/privacy-policy'
 import { Route as FindAProviderRouteImport } from './routes/find-a-provider'
 import { Route as ExperienceCentersRouteImport } from './routes/experience-centers'
 import { Route as DentistsRouteImport } from './routes/dentists'
 import { Route as ContactRouteImport } from './routes/contact'
+import { Route as CancellationAndRefundPolicyRouteImport } from './routes/cancellation-and-refund-policy'
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as ExperienceCentersChennaiExpressAvenueRouteImport } from './routes/experience-centers/chennai-express-avenue'
 
+const TermsAndConditionsRoute = TermsAndConditionsRouteImport.update({
+  id: '/terms-and-conditions',
+  path: '/terms-and-conditions',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
   id: '/sitemap.xml',
   path: '/sitemap.xml',
@@ -39,6 +47,11 @@ const ProductdetailsRoute = ProductdetailsRouteImport.update({
 const ProductRoute = ProductRouteImport.update({
   id: '/product',
   path: '/product',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PrivacyPolicyRoute = PrivacyPolicyRouteImport.update({
+  id: '/privacy-policy',
+  path: '/privacy-policy',
   getParentRoute: () => rootRouteImport,
 } as any)
 const FindAProviderRoute = FindAProviderRouteImport.update({
@@ -61,6 +74,12 @@ const ContactRoute = ContactRouteImport.update({
   path: '/contact',
   getParentRoute: () => rootRouteImport,
 } as any)
+const CancellationAndRefundPolicyRoute =
+  CancellationAndRefundPolicyRouteImport.update({
+    id: '/cancellation-and-refund-policy',
+    path: '/cancellation-and-refund-policy',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 const AboutRoute = AboutRouteImport.update({
   id: '/about',
   path: '/about',
@@ -81,41 +100,50 @@ const ExperienceCentersChennaiExpressAvenueRoute =
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/cancellation-and-refund-policy': typeof CancellationAndRefundPolicyRoute
   '/contact': typeof ContactRoute
   '/dentists': typeof DentistsRoute
   '/experience-centers': typeof ExperienceCentersRouteWithChildren
   '/find-a-provider': typeof FindAProviderRoute
+  '/privacy-policy': typeof PrivacyPolicyRoute
   '/product': typeof ProductRoute
   '/productdetails': typeof ProductdetailsRoute
   '/robots.txt': typeof RobotsDottxtRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/terms-and-conditions': typeof TermsAndConditionsRoute
   '/experience-centers/chennai-express-avenue': typeof ExperienceCentersChennaiExpressAvenueRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/cancellation-and-refund-policy': typeof CancellationAndRefundPolicyRoute
   '/contact': typeof ContactRoute
   '/dentists': typeof DentistsRoute
   '/experience-centers': typeof ExperienceCentersRouteWithChildren
   '/find-a-provider': typeof FindAProviderRoute
+  '/privacy-policy': typeof PrivacyPolicyRoute
   '/product': typeof ProductRoute
   '/productdetails': typeof ProductdetailsRoute
   '/robots.txt': typeof RobotsDottxtRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/terms-and-conditions': typeof TermsAndConditionsRoute
   '/experience-centers/chennai-express-avenue': typeof ExperienceCentersChennaiExpressAvenueRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/cancellation-and-refund-policy': typeof CancellationAndRefundPolicyRoute
   '/contact': typeof ContactRoute
   '/dentists': typeof DentistsRoute
   '/experience-centers': typeof ExperienceCentersRouteWithChildren
   '/find-a-provider': typeof FindAProviderRoute
+  '/privacy-policy': typeof PrivacyPolicyRoute
   '/product': typeof ProductRoute
   '/productdetails': typeof ProductdetailsRoute
   '/robots.txt': typeof RobotsDottxtRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/terms-and-conditions': typeof TermsAndConditionsRoute
   '/experience-centers/chennai-express-avenue': typeof ExperienceCentersChennaiExpressAvenueRoute
 }
 export interface FileRouteTypes {
@@ -123,58 +151,77 @@ export interface FileRouteTypes {
   fullPaths:
     | '/'
     | '/about'
+    | '/cancellation-and-refund-policy'
     | '/contact'
     | '/dentists'
     | '/experience-centers'
     | '/find-a-provider'
+    | '/privacy-policy'
     | '/product'
     | '/productdetails'
     | '/robots.txt'
     | '/sitemap.xml'
+    | '/terms-and-conditions'
     | '/experience-centers/chennai-express-avenue'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
     | '/about'
+    | '/cancellation-and-refund-policy'
     | '/contact'
     | '/dentists'
     | '/experience-centers'
     | '/find-a-provider'
+    | '/privacy-policy'
     | '/product'
     | '/productdetails'
     | '/robots.txt'
     | '/sitemap.xml'
+    | '/terms-and-conditions'
     | '/experience-centers/chennai-express-avenue'
   id:
     | '__root__'
     | '/'
     | '/about'
+    | '/cancellation-and-refund-policy'
     | '/contact'
     | '/dentists'
     | '/experience-centers'
     | '/find-a-provider'
+    | '/privacy-policy'
     | '/product'
     | '/productdetails'
     | '/robots.txt'
     | '/sitemap.xml'
+    | '/terms-and-conditions'
     | '/experience-centers/chennai-express-avenue'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AboutRoute: typeof AboutRoute
+  CancellationAndRefundPolicyRoute: typeof CancellationAndRefundPolicyRoute
   ContactRoute: typeof ContactRoute
   DentistsRoute: typeof DentistsRoute
   ExperienceCentersRoute: typeof ExperienceCentersRouteWithChildren
   FindAProviderRoute: typeof FindAProviderRoute
+  PrivacyPolicyRoute: typeof PrivacyPolicyRoute
   ProductRoute: typeof ProductRoute
   ProductdetailsRoute: typeof ProductdetailsRoute
   RobotsDottxtRoute: typeof RobotsDottxtRoute
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
+  TermsAndConditionsRoute: typeof TermsAndConditionsRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/terms-and-conditions': {
+      id: '/terms-and-conditions'
+      path: '/terms-and-conditions'
+      fullPath: '/terms-and-conditions'
+      preLoaderRoute: typeof TermsAndConditionsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/sitemap.xml': {
       id: '/sitemap.xml'
       path: '/sitemap.xml'
@@ -203,6 +250,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ProductRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/privacy-policy': {
+      id: '/privacy-policy'
+      path: '/privacy-policy'
+      fullPath: '/privacy-policy'
+      preLoaderRoute: typeof PrivacyPolicyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/find-a-provider': {
       id: '/find-a-provider'
       path: '/find-a-provider'
@@ -229,6 +283,13 @@ declare module '@tanstack/react-router' {
       path: '/contact'
       fullPath: '/contact'
       preLoaderRoute: typeof ContactRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/cancellation-and-refund-policy': {
+      id: '/cancellation-and-refund-policy'
+      path: '/cancellation-and-refund-policy'
+      fullPath: '/cancellation-and-refund-policy'
+      preLoaderRoute: typeof CancellationAndRefundPolicyRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/about': {
@@ -270,14 +331,17 @@ const ExperienceCentersRouteWithChildren =
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AboutRoute: AboutRoute,
+  CancellationAndRefundPolicyRoute: CancellationAndRefundPolicyRoute,
   ContactRoute: ContactRoute,
   DentistsRoute: DentistsRoute,
   ExperienceCentersRoute: ExperienceCentersRouteWithChildren,
   FindAProviderRoute: FindAProviderRoute,
+  PrivacyPolicyRoute: PrivacyPolicyRoute,
   ProductRoute: ProductRoute,
   ProductdetailsRoute: ProductdetailsRoute,
   RobotsDottxtRoute: RobotsDottxtRoute,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
+  TermsAndConditionsRoute: TermsAndConditionsRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

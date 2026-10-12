@@ -15,6 +15,9 @@ export const Route = createFileRoute("/sitemap.xml")({
           "/dentists",
           "/about",
           "/contact",
+          "/privacy-policy",
+          "/cancellation-and-refund-policy",
+          "/terms-and-conditions",
         ];
         const xml = [
           '<?xml version="1.0" encoding="UTF-8"?>',
